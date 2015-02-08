@@ -1,22 +1,20 @@
 #--
-# Ruby Whois parser for Rightside TLDs
+# Ruby Whois parser for Rightside/Donuts/United TLD domains
 #++
 
-
 require 'whois/record/parser/base_icann_compliant'
-
 
 module Whois
   class Record
     class Parser
 
-      # Parser for the whois.rightside.co server.
+      # Parser for the whois.unitedtld.com server, used for some Rightside and Donuts domains
       # identical to the Donuts whois server
       #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      class WhoisRightsideCo < BaseIcannCompliant
+      class WhoisUnitedtldCom < BaseIcannCompliant
         self.scanner = Scanners::BaseIcannCompliant, {
             pattern_available: /^Domain not found\.\n/
         }
